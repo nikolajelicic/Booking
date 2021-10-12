@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; }
+
+body {
+  font-family: "Roboto", sans-serif; }
+
+.blue {
+  background-color: #003580; }
+
+header div div div img {
+  width: 200px;
+  height: 37px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer; }
+
+header div nav {
+  padding: 0 !important; }
+  header div nav button {
+    color: #fff; }
+    header div nav button i {
+      font-size: 20px;
+      color: #fff; }
+  header div nav div ul li a {
+    color: #fff;
+    padding: 16px !important; }
+    header div nav div ul li a:hover {
+      background-color: #00326e;
+      color: #fff !important; }
+
+.active {
+  background-color: #0071c2; }
+
+.houseImg {
+  width: 500px;
+  height: 250px;
+  cursor: pointer; }
+
+.title {
+  color: #003580; }
+
+.swiper-img {
+  width: 500px;
+  height: 400px;
+  cursor: pointer; }
+  @media (max-width: 767px) {
+    .swiper-img {
+      width: 90%;
+      height: 400px; } }
+  @media (max-width: 575px) {
+    .swiper-img {
+      width: 80%;
+      height: 200px; } }
+
+.swiper-container {
+  max-width: 500px;
+  height: 400px; }
+  @media (max-width: 767px) {
+    .swiper-container {
+      width: 90%;
+      height: 400px; } }
+  @media (max-width: 575px) {
+    .swiper-container {
+      width: 80%;
+      height: 200px; } }
+
+.price {
+  color: #003580; }
+
+.rezervation {
+  float: right;
+  padding: 10px;
+  background: #003580;
+  color: #fff;
+  border-radius: 5px;
+  border: none; }
+  .rezervation:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #00326e; }
+
+.more {
+  background: #003580;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px; }
+  .more:hover {
+    background: #00326e;
+    color: #fff;
+    text-decoration: none; }
+
+#passwordSection {
+  margin-top: 150px; }
+
+#error {
+  color: #003580;
+  font-size: 100px;
+  margin: 150px 0;
+  text-align: center; }
+
+.central-img {
+  width: 80%;
+  height: 80%; }
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between; }
+
+footer {
+  background: #003580; }
+  footer p {
+    color: #fff;
+    font-size: 25px; }
+  footer a {
+    color: #fff; }
+    footer a:hover {
+      text-decoration: none;
+      color: #003580; }
+
+.login-row {
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px; }
+  .login-row div h2 {
+    margin-bottom: 60px; }
+  .login-row div form input {
+    margin-top: 20px;
+    text-align: center !important; }
+  .login-row div form button {
+    width: 300px;
+    padding: 10px;
+    background-color: #003580;
+    border: none;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 10px; }
+    .login-row div form button:hover {
+      background-color: #00326e; }
+
+.house .img-section {
+  float: left; }
+  .house .img-section img {
+    width: 250px;
+    height: 150px; }
+
+.house .description {
+  float: right; }

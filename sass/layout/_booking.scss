@@ -1,0 +1,75 @@
+.houseImg{
+    width: 500px;
+    height: 250px;
+    cursor: pointer;
+}
+.title{
+    color: $blue;
+}
+.swiper-img{
+    width: 500px;
+    height: 400px;
+    cursor: pointer;
+
+    @media(max-width: $md){
+        width: 90%;
+        height: 400px; 
+    }
+    @media(max-width: $sm){
+        width: 80%;
+        height: 200px;
+    }
+}
+.swiper-container {
+    max-width: 500px;
+    height: 400px;
+    
+    @media(max-width: $md){
+        width: 90%;
+        height: 400px; 
+    }
+    @media(max-width: $sm){
+        width: 80%;
+        height: 200px;
+    }
+}
+.price{
+    color: $blue;
+}
+.rezervation{
+    float: right;
+    padding: 10px;
+    background: $blue;
+    color: $white;
+    border-radius: 5px;
+    border: none;
+    &:hover{
+        text-decoration: none;
+        color: $white;
+        background: $hover;
+    }
+}
+.more{
+    background: $blue;
+    color: $white;
+    padding: 5px;
+    border-radius: 5px;
+    &:hover{
+        background: $hover;
+        color: $white;
+        text-decoration: none;
+    }
+}
+#passwordSection{
+    margin-top: 150px;
+}
+#error{
+    color: $blue;
+    font-size: 100px;
+    margin: 150px 0;
+    text-align: center;
+}
+.central-img{
+    width: 80%;
+    height: 80%;
+}

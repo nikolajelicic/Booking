@@ -1,0 +1,17 @@
+{
+    "name": "nikola/oglasi",
+    "description": "Booking web aplication",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jelicic Nikola",
+            "email": "jelicicnikola99@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : "Private/"        
+        }
+    }
+}

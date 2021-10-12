@@ -1,0 +1,47 @@
+.blue{
+    background-color: $blue;
+}
+header{
+    div{
+        div{
+            div{
+                img{
+                    width: 200px;
+                    height: 37px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    div{
+        nav{
+            padding: 0!important;
+            button{
+                color: $white;
+                i{
+                    font-size: 20px;
+                    color: $white;
+                }
+            }
+            div{
+                ul{
+                    li{
+                        a{
+                            color: $white;
+                            padding: 16px!important;
+                            &:hover{
+                                background-color: $hover;
+                                color: $white!important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.active{
+    background-color: $active;
+}

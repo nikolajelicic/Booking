@@ -1,0 +1,20 @@
+.flex-wrapper{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer{
+    background: $blue;
+    p{
+        color: $white;
+        font-size: 25px;
+    }
+    a{
+        color: $white;
+        &:hover{
+            text-decoration: none;
+            color: $blue;
+        }
+    }
+}

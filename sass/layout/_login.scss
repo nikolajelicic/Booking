@@ -1,0 +1,28 @@
+.login-row{
+    margin-top: 100px;
+    text-align: center;
+    padding: 20px;
+    div{
+        h2{
+            margin-bottom: 60px;
+        }
+        form{
+            input{
+                margin-top: 20px;
+                text-align: center!important;
+            }
+            button{
+                width: 300px;
+                padding: 10px;
+                background-color: $blue;
+                border: none;
+                color: $white;
+                margin-top: 20px;
+                border-radius: 10px;
+                &:hover{
+                    background-color: $hover;
+                }
+            }
+        }
+    }
+}
