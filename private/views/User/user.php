@@ -1,7 +1,8 @@
 <?php 
     session_start();
-    if(!isset($_SESSION['id'])&&$_SESSION['role']!='user'){
-      die("Pristup vam nije dozvoljen");
+    if(!isset($_SESSION['id'])||$_SESSION['role']!='user'){
+        include '404.php';
+        die();
     }
     include 'header.php';
 ?>

@@ -1,18 +1,18 @@
 <?php 
-    include 'header.php';
     session_start();
     if(!isset($_SESSION['id'])||$_SESSION['role']!='admin'){
       include '404.php';
       die();
     }
+    include 'header.php';
 ?>
 <header class="wrapper blue">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-xl-3 col-lg-4 col-md-12 text-md-center col-sm-12 text-sm-center">
-                <h1 class="text-white">Admin panel</h1>
+                <img src="img/logo.svg" alt="logo">
             </div>
-            <div class="col-xl-7 col-lg-7 col-md-12 text-md-center col-sm-12 justify-content-end">
+            <div class="col-xl-5 col-lg-7 col-md-12 text-md-center col-sm-12 justify-content-end">
                 <nav class="navbar navbar-expand-sm text-center">
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#target">
                     <i class="fas fa-bars"></i>Menu

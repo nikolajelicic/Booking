@@ -42,7 +42,7 @@ header div nav {
   color: #003580; }
 
 .swiper-img {
-  width: 500px;
+  width: 540px;
   height: 400px;
   cursor: pointer; }
   @media (max-width: 767px) {
@@ -70,8 +70,8 @@ header div nav {
   color: #003580; }
 
 .rezervation {
-  float: right;
   padding: 10px;
+  margin-bottom: 10px;
   background: #003580;
   color: #fff;
   border-radius: 5px;

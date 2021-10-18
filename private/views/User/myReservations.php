@@ -94,6 +94,16 @@
         </div>
     </div>
 </div>
+<footer class="wrapper mt-5">
+        <div class="container"> 
+            <div class="row">
+                <div class="col-xl-4 offset-xl-4 text-center">
+                    <p>© Copyright Jelicic Nikola</p>
+                    <a href="mailto:jelicicnikola99@gmail.com">Mail: jelicicnikola99@gmail.com</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
 <?php 
     include 'modal/editReservationModal.php';

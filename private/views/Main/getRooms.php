@@ -25,7 +25,7 @@
             <div class="col-xl-3 col-lg-4 col-md-12 text-md-center col-sm-12 text-sm-center">
                <img src="../img/logo.svg" alt="logo">
             </div>
-            <div class="col-xl-7 col-lg-7 col-md-12 text-md-center col-sm-12 justify-content-end">
+            <div class="col-xl-6 col-lg-7 col-md-12 text-md-center col-sm-12 justify-content-end">
                 <nav class="navbar navbar-expand-md text-center">
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#target">
                     <i class="fas fa-bars"></i>Menu
@@ -40,7 +40,7 @@
                                         <a href='../user' class='nav-link'>Profil</a>
                                     </li>
                                     <li class='nav-item'>
-                                        <a href='../user/myrezervations' class='nav-link'>Moje rezervacije</a>
+                                        <a href='../user/myreservations".$_SESSION['id']."' class='nav-link'>Moje rezervacije</a>
                                     </li>
                                     <li class='nav-item'>
                                         <a href='../logout' class='nav-link'>Odjavi se</a>
@@ -78,10 +78,10 @@
 </div>
 <div class="wrapper mb-5">
     <div class="container">
-        <?php foreach($rooms as $room):?>
-        <div class="row">
+    <?php foreach($rooms as $room):?>
+        <div class="row mb-5">
             <div class="col-xl-6 col-lg-6 col-md-12 text-center">
-                <div class="swiper-container">
+                <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <?php 
                             $img = json_decode($room->images);
@@ -90,10 +90,10 @@
                             }
                         ?>
                     </div>
-                </div>
-                  <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-prev"></div>
                   <div class="swiper-button-next"></div>
                   <div class="swiper-scrollbar"></div>
+                </div>
             </div>
 
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
@@ -123,23 +123,18 @@
     </div>
 </footer>
 <script>
-const swiper = new Swiper('.swiper-container', {
-  direction: 'horizontal',
-  loop: true,
-
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
 </script>
 <?php 
     include 'modal/registration.php';

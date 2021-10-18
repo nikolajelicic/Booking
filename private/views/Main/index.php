@@ -5,10 +5,16 @@
 <header class="wrapper blue">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-xl-3">
-                <img src="img/logo.svg" alt="">
+            <div class="col-xl-3 col-lg-4 col-md-12 text-md-center col-sm-12 text-sm-center">
+                <img src="img/logo.svg" alt="logo">
             </div>
-            <div class="col-xl-6 justify-content-end">
+            <?php 
+                if(isset($_SESSION['role'])&&$_SESSION['role']=='user'){
+                    echo '<div class="col-xl-6 col-lg-7 col-md-12 text-md-center col-sm-12 justify-content-end">';
+                }else {
+                    echo '<div class="col-xl-4 col-lg-7 col-md-12 text-md-center col-sm-12 justify-content-end">';
+                }
+            ?>
                 <nav class="navbar navbar-expand-md text-center">
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#target">
                     <i class="fas fa-bars"></i>Menu
@@ -20,7 +26,10 @@
                             </li>
                             <?php if(isset($_SESSION['id'])){
                                 echo "<li class='nav-item'>
-                                        <a href='user' class='nav-link'>Profil</a>
+                                        <a href='user/myreservations".$_SESSION['id']."' class='nav-link'>Moje rezervacije</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a href='user/changePassword' class='nav-link'>Promeni sifru</a>
                                     </li>
                                     <li class='nav-item'>
                                         <a href='logout' class='nav-link'>Odjavi se</a>
@@ -65,7 +74,7 @@
                     <div class="col-xl-9">
                         <div class="description">
                             <h3><?php echo $house->name;?></h3>
-                            <p><?php //echo wordwrap($house->description, 300,"...<a href='#'>Procitaj vise</a>",false);
+                            <p><?php
                                 echo mb_strimwidth($house->description, 0, 300, "...");
                             ?></p>
                             <a class="more float-right" href="house/getRooms=<?php echo $house->idhouses;?>">Pogledaj vise</a>

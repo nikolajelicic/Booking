@@ -45,7 +45,7 @@ class MainController extends Controller{
                 }else{
                     $_SESSION['role'] = 'user';
                     $_SESSION['id'] = $user->idusers;
-                    $this->msg("true","user");
+                    $this->msg("true","index");
                 }
             }
         }

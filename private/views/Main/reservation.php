@@ -35,7 +35,7 @@
             <div class="col-xl-3 col-lg-4 col-md-12 text-md-center col-sm-12 text-sm-center">
                 <img src="../img/logo.svg" alt="">
             </div>
-            <div class="col-xl-7 col-lg-7 col-md-12 text-md-center col-sm-12 justify-content-end">
+            <div class="col-xl-6 col-lg-7 col-md-12 text-md-center col-sm-12 justify-content-end">
                 <nav class="navbar navbar-expand-md text-center">
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#target">
                     <i class="fas fa-bars"></i>Menu
@@ -43,14 +43,26 @@
                     <div class="collapse navbar-collapse" id="target">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="../index" class="nav-link">Svi apartmani</a>
+                                <a href="../" class="nav-link">Svi apartmani</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="../logout" class="nav-link">Odjavi se</a>
-                            </li>
-                            <li class="nav-item">
-                                <a data-toggle="modal" data-target="#registration" href="#" class="nav-link">Registruj se</a>
-                            </li>
+                            <?php if(isset($_SESSION['id'])){
+                                echo "<li class='nav-item'>
+                                        <a href='../user' class='nav-link'>Profil</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a href='../user/myreservations".$_SESSION['id']."' class='nav-link'>Moje rezervacije</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a href='../logout' class='nav-link'>Odjavi se</a>
+                                    </li>";
+                            }else {
+                                echo "<li class='nav-item'>
+                                        <a href='../login' class='nav-link'>Uloguj se</a>
+                                    </li>
+                                    <li class='nav-item'>
+                                        <a data-toggle='modal' data-target='#registration' href='#' class='nav-link'>Registruj se</a>
+                                    </li>";
+                            }?>
                         </ul>
                     </div>
                 </nav>
@@ -61,8 +73,8 @@
 <div class="wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-xl-12">
-                <div class="swiper-container">
+            <div class="col-xl-6 offset-xl-3">
+                <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                       <?php 
                           $img = json_decode($rooms->images);
@@ -84,7 +96,7 @@
         <div class="row">
             <div class="col-xl-12 text-center mt-5">
                 <h3>Izabrali ste apartman: <span><?php echo $rooms->room_name;?></span></h3>
-                <p>Cena za jednu osobu po danu <?php echo $rooms->price_per_day;?></p>
+                <p>Cena za jednu osobu po danu <?php echo $rooms->price_per_day;?> dinara.</p>
                 <p><strong id="priceMessage"></strong></p>
                 <p><strong id="reservationMessage"></strong></p>
                 <form id="reservationForm" method="POST" action="confirmReservation">
@@ -102,7 +114,10 @@
                         </div>
                     </div>
                 </form>
-                <button class="calculate btn btn-success">Izracunaj</button>
+                <div class="alert alert-primary">
+                    <p>Pre rezervacije mozes da izracunas cenu nocenja za odredjeni vremenski period.<br>(sva polja moraju biti popunjena).</p>
+                    <button class="calculate btn btn-success">Izracunaj</button>
+                </div>
             </div>
         </div>
     </div>
@@ -118,23 +133,18 @@
     </div>
 </footer>
 <script>
-const swiper = new Swiper('.swiper-container', {
-  direction: 'horizontal',
-  loop: true,
-
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
 </script>
 <script src="../js/calculatePrice.js"></script>
 <script src="../js/ajax/confirmReservation.js"></script>

@@ -5,7 +5,7 @@ include 'header.php';
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-xl-2">
-                <h2>Booking</h2>
+                <img src="img/logo.svg" alt="logo">
             </div>
             <div class="col-xl-4">
                 <nav class="navbar navbar-expand-md text-center">
